@@ -1,0 +1,278 @@
+var ib_invoice_data = function(){/*
+#=========================================================================================================
+
+
+### Company data
+
+[{title}]
+INVOICE
+
+[{docket_label}]
+Docket #
+
+[{docket_number}]
+0374
+
+[{cc_label}]
+CC #
+
+[{cc_number}]
+7193
+
+[{gst_no}]
+GST# 86310 1697 RT0001
+
+[{company_name}]
+Advantagewon
+
+[{company_address}]
+437-509 Commissioners Rd. W.
+
+[{company_city_zip_state}]
+London ON, N6J 1Y5
+
+[{company_phone_fax}]
+Attn: Mark Wilson
+
+[{company_email_web}]
+info@trucash.com
+
+[{payment_info1}]
+Invoice #
+
+[{payment_info2}]
+Date:
+
+[{payment_info3}]
+Order No.
+
+[{payment_info4}]
+Rep.
+
+[{payment_info5}]
+
+
+[{payment_info6}]
+
+
+[{payment_info7}]
+
+
+[{payment_info8}]
+
+
+[{issue_date_label}]
+Issue Date:
+
+[{issue_date}]
+
+
+[{order_no_label}]
+Order No.
+
+[{order_no}]
+25861513
+
+[{rep_no_label}]
+Rep.
+
+[{rep_no}]
+SM
+
+[{net_term_label}]
+Net:
+
+[{net_term}]
+21
+
+[{due_date_label}]
+Due Date:
+
+[{due_date}]
+
+
+[{currency_label}]
+Currency:
+
+[{currency}]
+USD
+
+[{po_number_label}]
+P.O. #
+
+[{po_number}]
+1/3-147
+
+[{bill_to_label}]
+Bill to:
+
+[{client_name}]
+Advantagewon
+
+[{client_address}]
+437-509 Commissioners Rd. W.
+
+[{client_city_zip_state}]
+London ON, N6J 1Y5
+
+[{client_phone_fax}]
+Attn: Mark Wilson
+
+[{client_email}]
+info@trucash.com
+
+[{client_other}]
+Attn: Fred Flintstone
+
+[{invoice_title}]
+INVOICE #
+
+[{invoice_number}]
+AW-RC-1022
+
+[{item_row_number_label}]
+
+
+[{item_description_label}]
+Item
+
+[{item_quantity_label}]
+Quantity
+
+[{item_price_label}]
+Price
+
+[{item_discount_label}]
+Discount
+
+[{item_tax_label}]
+Tax
+
+[{item_line_total_label}]
+Linetotal
+
+[{item_row_number}]
+
+
+[{item_description}]
+
+
+[{item_quantity}]
+
+
+[{item_price}]
+
+
+[{item_discount}]
+
+
+[{item_tax}]
+
+
+[{item_line_total}]
+
+
+[{amount_subtotal_label}]
+Subtotal:
+
+[{amount_subtotal}]
+
+
+[{tax_name}]
+Tax:
+
+[{tax_value}]
+
+
+[{amount_total_label}]
+Total:
+
+[{amount_total}]
+
+
+[{amount_paid_label}]
+Paid:
+
+[{amount_due_label}]
+Amount Due:
+
+[{amount_due}]
+
+
+[{terms_label}]
+<i>Terms:</i> <b>Wire Transfer</b>
+
+[{terms}]
+1.5% per month interest may be charged on overdue invoices<br />Payments returned NSF are subject to a $50.00 charge.
+
+
+### Settings
+
+# One of 'dd/mm/yyyy', 'dd-mm-yyyy', 'dd.mm.yyyy', 'mm/dd/yyyy', 'mm-dd-yyyy', 'mm.dd.yyyy', 'yyyy mm dd', 'yyyy-mm-dd', 'yyyy.mm.dd'
+[date_format]
+mm/dd/yyyy
+
+# One of 'left' or 'right'
+[currency_position]
+left
+
+# One of '0,000.00', '0000.00', '0.000,00', or '0000,00'
+[number_format]
+0,000.00
+
+[default_columns]
+item_row_number,item_description,item_quantity,item_price,item_tax,item_line_total
+
+[default_quantity]
+1
+
+[default_price]
+0
+
+[default_discount]
+0
+
+[default_tax]
+0
+
+[default_number_rows]
+2
+
+[auto_calculate_dates]
+true
+
+[load_items]
+true
+
+[invoicebus_fineprint]
+true
+
+
+### Items (in this order item_description@||@item_quantity@||@item_price@||@item_discount@||@item_tax)
+
+[items]
+Frozen Brontosaurus Ribs@||@500@||@5.00@||@@||@13
+#@||@@||@@||@@||@
+
+
+### Custom data (in format field_name@||@field_value)
+
+# Document custom data
+[document_custom]
+
+
+# Client custom data
+[client_custom]
+
+
+
+### Logo
+
+#base64 encoded data URI of PNG image
+[{company_logo}]
+
+
+
+
+#=========================================================================================================
+*/}
