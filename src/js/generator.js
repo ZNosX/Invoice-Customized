@@ -321,7 +321,7 @@
                     '<ib-span class="ib_default_button ib_highlight_editable" data-tooltip="tooltip" data-placement="bottom" title="Highlight editable fields"><i class="fa fa-edit"></i> Highlight Fields</ib-span>' +
                     '<ib-span id="ib-save-data-btn" class="ib_default_button" data-toggle="modal" data-target="#ib_saveCurrentStateModal" data-tooltip="tooltip" data-placement="bottom" title="Save current invoice data such as<br/>company address, logo, etc., for future re-use"><i class="fa fa-bolt"></i> Save Current State</ib-span>' +
                     '<iframe id="ib_download_data_frame" class="ib_force_hide"></iframe>' +
-                    '<ib-span class="ib_default_button ib_save_online" data-tooltip="tooltip" data-placement="bottom" title="You\'ll be taken to Invoicebus website<br/>to save this invoice online"><i class="fa fa-cloud-upload"></i> Save Invoice Online</ib-span>' +
+                    '<ib-span class="ib_default_button ib_save_online" data-tooltip="tooltip" data-placement="bottom" title="Invoice will be saved to DataBase<br/>Prototype v1.0"><i class="fa fa-cloud-upload"></i> Save Invoice </ib-span>' +
                     '<ib-span class="ib_save_info" data-tooltip="tooltip" data-placement="right" title="You\'ll need Invoicebus account to save this invoice"><i class="fa fa-question-circle"></i></ib-span>' +
 
                     '<ib-span class="ib_gray_link ib_how_to_link ib_pull_right" data-toggle="modal" data-target="#ib_howToModal">About</ib-span>' +
@@ -354,7 +354,7 @@
 
       window.print();
     });
-
+    
     $('#ib-save-data-btn').click(function() {
       if(ib_isSafari())
       {
@@ -2231,7 +2231,47 @@
 
     return data;
   };
+    
+  // Start Customized
+  var submitInvoiceData = function (des) {
+  var content = ib_getCurrentState();
+  
+  //variables
+  var GSTNo = $('.ibcl_gst_no').text();
+  var Client = $('.ibcl_client_name').text();
+  var ShipTo = $('.ibcl_company_name').text();
+  var InvoiceNo = $('.ibcl_invoice_number').text();
+  var IssueDate = $('.ibcl_issue_date').text();
+  var OrderNo = $('.ibcl_order_no').text();
+  var Rep = $('.ibcl_rep_no').text();
+  var DocketNo = $('.ibcl_docket_number').text();
+  var CCNo = $('.ibcl_cc_number').text();
+  var Currency = $('.ibcl_currency').text();
+  var SubTotal = $('.ibcl_amount_subtotal').text();
+  var TotalAmount = $('.ibcl_amount_total').text();
+  var AmountDue = $('.ibcl_amount_due').text();
+    
+    $.ajax({
+        type: "POST",
+        url: rootURL() + '/updateInvoice',
+        //contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        data: { data: content, description: des, GSTNo:GSTNo, Client:Client,
+            ShipTo:ShipTo, InvoiceNo:InvoiceNo, IssueDate:IssueDate, OrderNo:OrderNo,
+            Rep:Rep, DocketNo:DocketNo, CCNo:CCNo, Currency:Currency,SubTotal:SubTotal,
+            TotalAmount:TotalAmount, AmountDue:AmountDue },
+        dataType: "text",
+        success: function (data) {
+            alert(data);
+            window.location.href = rootURL() + '/index';
+        },
+        error: function (xhr, status, error) {
+            alert(xhr.responseText);
+        }
+    });
+  };
+  // End Customized
 
+  // Save online
   /**
    * Save invoice to Invoicebus
    */
@@ -2250,14 +2290,15 @@
       .removeClass('fa-cloud-upload')
       .addClass('fa-spinner fa-spin');
     
+    submitInvoiceData('Just a test');
     // Escape the data for sending in form post
-    var data = $('<div />').text(JSON.stringify(ib_getInvoiceData())).html().replace(/"/gi, '&quot;');
+    // var data = $('<div />').text(JSON.stringify(ib_getInvoiceData())).html().replace(/"/gi, '&quot;');
 
-    // Build dynamic form where the data will be submitted
-    SAVE_URL += TRACKING + '&utm_term=' + encodeURIComponent(document.title); //&utm_content=
-    $('<form id="ib_save_tamplate_form" style="display:none !important;" action="' + SAVE_URL + '" method="POST" />')
-      .append($('<input type="hidden" name="invoice_data" value="' + data + '" />'))
-      .appendTo($(document.body)).submit();
+    // // Build dynamic form where the data will be submitted
+    // SAVE_URL += TRACKING + '&utm_term=' + encodeURIComponent(document.title); //&utm_content=
+    // $('<form id="ib_save_tamplate_form" style="display:none !important;" action="' + SAVE_URL + '" method="POST" />')
+    //   .append($('<input type="hidden" name="invoice_data" value="' + data + '" />'))
+    //   .appendTo($(document.body)).submit();
   };
 
   /**

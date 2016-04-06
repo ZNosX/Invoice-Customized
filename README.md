@@ -1,6 +1,6 @@
 # HTML Invoice Generator
 
-This Invoice Generator will easily transform your HTML invoice template in fully functional invoice editor. To create your own invoice template and use it with this generator see the [Create your own invoice template](#create-your-own-invoice-template) section.
+This Invoice Generator will easily transform your HTML invoice template in fully functional invoice editor.
 
 ## Setup
 
@@ -28,15 +28,3 @@ The generator script is tested and confirmed that is fully functional in:
 * Safari 6+
 * Opera 15+
 * Internet Explorer 10+
-
-## Create your own invoice template
-
-The major rule we have for this is **never start from scratch** so we encourage you to download the default Invoicebus [template](http://cdn.invoicebus.com/generator/template.zip) and use it as starting point for creating your custom invoice template. Refer to our [official guide](https://invoicebus.com/how-to-create-invoice-template/) on how to further customize your template.
-
-## Issues and feedback
-
-If you found bugs please submit them [here](https://github.com/Invoicebus/html-invoice-generator/issues). For general questions and feedback use our [support forum](https://groups.google.com/d/forum/html-invoice-generator).
-
-## License
-
-The Invoice Generator is under MIT license. See the [LICENSE](https://github.com/Invoicebus/html-invoice-generator/blob/master/LICENSE).
